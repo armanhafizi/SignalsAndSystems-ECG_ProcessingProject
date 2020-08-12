@@ -1,0 +1,18 @@
+ECG = load('Data.mat');
+figure(1);
+subplot(2,1,1);
+d = ECG.data.signal;
+fs = ECG.data.samplingfreq;
+unit = ECG.data.measurement_unit;
+x = (250:+1:250+fs);
+t = (1:+1:length(d))./fs;
+plot(t,d);
+xlabel('Time(s)');
+ylabel(unit);
+title('Preprocessing - Part 1: Signal');
+p = d(x);
+subplot(2,1,2);
+plot(p);
+ylabel(unit);
+xlabel('n');
+title('Preprocessing - Part 1: Signal Over One Period');

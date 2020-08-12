@@ -1,0 +1,14 @@
+ac_f = fftshift(fft(ac));
+n_ac = length(ac_f);
+fac_f = (-n_ac/2:n_ac/2-1)*(fs/n_ac);
+figure(7);
+subplot(2,1,1);
+plot(fac_f, abs(ac_f));
+xlabel('frequency');
+ylabel('absolute magnitude');
+title('Processing - Part 7: PSD');
+subplot(2,1,2);
+plot(fac_f, angle(ac_f));
+xlabel('frequency');
+ylabel('angle phase');
+title('Processing - Part 7: PSD');

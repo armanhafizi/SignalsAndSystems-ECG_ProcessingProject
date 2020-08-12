@@ -1,0 +1,15 @@
+y = fft(d);
+d_f = fftshift(y);
+ny = length(y);
+fd_f = (-ny/2:ny/2-1)*(fs/ny);
+figure(2);
+subplot(2,1,1);
+stem(fd_f, abs(d_f));
+xlabel('frequency');
+ylabel('absolute magnitude');
+title('Preprocessing - Part 2: Absolute Magnitude');
+subplot(2,1,2);
+stem(fd_f, angle(d_f));
+xlabel('frequency');
+ylabel('angle');
+title('Preprocessing - Part 2: Angle Phase');
